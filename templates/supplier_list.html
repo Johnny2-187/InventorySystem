@@ -1,0 +1,26 @@
+<!-- supplier_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Supplier List</h2>
+  <table style="width:100%; table-layout:fixed;">
+    <tr>
+      <th style="padding-right:20px;">Name</th>
+      <th style="padding-right:20px;">Contact Person</th>
+      <th style="padding-right:20px;">Email</th>
+      <th style="padding-right:20px;">Phone Number</th>
+      <th style="padding-right:20px;">Address</th>
+      <th style="padding-right:20px;">Website</th>
+    </tr>
+    {% for supplier in suppliers %}
+    <tr>
+      <td style="padding-right:20px;">{{ supplier.name }}</td>
+      <td style="padding-right:20px;">{{ supplier.contact_person }}</td>
+      <td style="padding-right:20px;">{{ supplier.email }}</td>
+      <td style="padding-right:20px;">{{ supplier.phone_number }}</td>
+      <td style="padding-right:20px;">{{ supplier.address }}</td>
+      <td style="padding-right:20px;">{{ supplier.website }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

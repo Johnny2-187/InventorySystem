@@ -1,0 +1,31 @@
+<!-- add_product.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add Product</h2>
+  <form action="{% url 'add_product' %}" method="get">
+    <button type="submit">Add Product</button>
+</form>
+  <table style="width:100%; table-layout:fixed;">
+    <tr>
+      <th style="padding-right:20px;">Name</th>
+      <th style="padding-right:20px;">Sku</th>
+      <th style="padding-right:20px;">Description</th>
+      <th style="padding-right:20px;">Brand</th>
+      <th style="padding-right:20px;">Price</th>
+      <th style="padding-right:20px;">Quantity Available</th>
+      <th style="padding-right:20px;">Supplier</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+      <td style="padding-right:20px;">{{ product.name }}</td>
+      <td style="padding-right:20px;">{{ product.sku }}</td>
+      <td style="padding-right:20px;">{{ product.description }}</td>
+      <td style="padding-right:20px;">{{ product.brand }}</td>
+      <td style="padding-right:20px;">{{ product.price }}</td>
+      <td style="padding-right:20px;">{{ product.quantity_available }}</td>
+      <td style="padding-right:20px;">{{ product.supplier }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
